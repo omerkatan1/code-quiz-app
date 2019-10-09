@@ -1,3 +1,14 @@
+/* centers text */
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+
 
 /* everything to do with the header */
 header{
@@ -9,11 +20,19 @@ header{
     position: relative;
 }
 
-#titleText {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+#navButtonBox {
+    
+}
+
+#hamBar {
+    margin-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: black;
+    height: 4px;
+    width: 30px;
+    margin-bottom: 4px;
 }

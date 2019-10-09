@@ -13,6 +13,9 @@
 
     <!-- linking jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- linking navMenu js and css -->
+    <link rel="stylesheet" href="Assets/navmenu/navmenu.css">
 </head>
 
 <body>
@@ -25,23 +28,59 @@
             <div id="navButtonBox" class="col-2">
 
                 <!-- hamburger bar -->
-                <div class="container">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div id="hamBar" class="container center">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
                 </div>
 
             </div>
 
             <!-- where the title is located -->
             <div id="headerTitleBox" class="col-8">
-                <h1 id="titleText">Code Quiz</h1>
+                <h1 id="titleText" class="center">Code Quiz</h1>
             </div>
 
             <!-- blank space -->
             <div class="col-2"></div>
         </div>
     </header>
+
+
+
+
+    <!-- Nav Menu -->
+    <div id="navMenu" class="container">
+
+        <div id="navMenu-header" class="row">
+            <!-- blank Space -->
+            <div class="col-8"></div>
+
+            <div class="col-4">
+                <div id="hamBar" class="container">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#navMenu").hide();
+
+        $(document).ready(function () {
+            // hides/shows the menu
+            $("#hamBar").click(function () {
+                $("#navMenu").toggle();
+            });
+        });
+
+        if($("#navMenu").is(":visible")) {
+            
+        }
+
+    </script>
 </body>
 
 </html>
