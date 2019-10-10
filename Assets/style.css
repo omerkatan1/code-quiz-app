@@ -8,6 +8,13 @@
     transform: translate(-50%, -50%);
 }
 
+body, html, header {
+    background-color: rgb(124, 219, 223);
+}
+#mainBody {
+    background-color: rgb(124, 219, 223);
+    padding-top: 20%;
+}
 
 
 /* everything to do with the header */
@@ -20,19 +27,42 @@ header{
     position: relative;
 }
 
+#titleText {
+    color: purple;
+    font-size: 75px;
+    font-family: 'Luckiest Guy', cursive;
+}
+
 #navButtonBox {
-    
+    margin-left: 30px;
 }
 
 #hamBar {
-    margin-left: 10px;
+    position: absolute;
+    left: 30px;
+    top: 35%;
+    width: auto;
     cursor: pointer;
-    display: inline-block;
 }
 
 .bar1, .bar2, .bar3 {
+    border-radius: 10px;
     background-color: black;
     height: 4px;
     width: 30px;
-    margin-bottom: 4px;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+/* anamation properties for navbar icon */
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px); 
+}
+.change .bar2 {
+    -webkit-transform: rotate(-45deg) translate(-2px, -1px);
+    transform: rotate(-45deg) translate(-2px, -1px); 
+}
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -5px);
+    transform: rotate(45deg) translate(-8px, -5px);
 }

@@ -1,7 +1,22 @@
 
 #navMenu {
-    display: inline-block;
-    height: 100%;
-    width: 15%;
+    display: block;
+    position: absolute;
+    width: 130px;
     background-color: purple;
+    margin-left: 30px;
+}
+
+.navLinkBox {
+    cursor: pointer;
+    text-align: center;
+    padding-top: 25px;
+    color: white;
+    width: 100%;
+    height: 75px;
+    transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+}
+.navLinkBox:hover {
+    background-color: rgb(126, 57, 126);
 }

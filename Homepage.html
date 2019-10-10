@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-wedth, initial-scale=1">
     <title>Code Quiz</title>
 
     <!-- linking main css file -->
@@ -16,6 +17,9 @@
 
     <!-- linking navMenu js and css -->
     <link rel="stylesheet" href="Assets/navmenu/navmenu.css">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +32,7 @@
             <div id="navButtonBox" class="col-2">
 
                 <!-- hamburger bar -->
-                <div id="hamBar" class="container center">
+                <div id="hamBar" class="container" onclick="animateNav(this)">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
@@ -47,22 +51,32 @@
     </header>
 
 
-
-
     <!-- Nav Menu -->
-    <div id="navMenu" class="container">
+    <div id="navMenu">
+        <div class="navLinkBox">
+            <a class="navLink">Highscores</a>
+        </div>
 
-        <div id="navMenu-header" class="row">
-            <!-- blank Space -->
-            <div class="col-8"></div>
+        <div class="navLinkBox">
+            <a class="navLink">Quiz Selection</a>
+        </div>
+    </div>
 
-            <div class="col-4">
-                <div id="hamBar" class="container">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
+
+    
+    <div id="mainBody" class="container-fluid">
+        <div class="row">
+
+            <!-- blank space -->
+            <div class="col-4"></div>
+
+            <!-- Quiz selection button on homepage -->
+            <div id="homeQuizSelectButton" class="col-4">
+                <button id="homeQuizSelectButton" class="center">Select Quiz</button>
             </div>
+
+            <!-- blank space -->
+            <div class="col-4"></div>
         </div>
     </div>
 
@@ -72,14 +86,15 @@
         $(document).ready(function () {
             // hides/shows the menu
             $("#hamBar").click(function () {
-                $("#navMenu").toggle();
+                $("#navMenu").animate({
+                    height: 'toggle',
+                });
             });
         });
 
-        if($("#navMenu").is(":visible")) {
-            
+        function animateNav(x) {
+            x.classList.toggle("change");
         }
-
     </script>
 </body>
 
