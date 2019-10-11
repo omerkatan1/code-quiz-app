@@ -13,7 +13,7 @@ body, html, header {
 }
 #mainBody {
     background-color: rgb(124, 219, 223);
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 
@@ -65,4 +65,25 @@ header{
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -5px);
     transform: rotate(45deg) translate(-8px, -5px);
+}
+
+/* everything to do with the body */
+
+#homeQuizSelectButton {
+    margin-left: 35px;
+    border-radius: 40px;
+    border: 5px solid rgb(118, 82, 204);
+    background-color: rgb(220, 197, 241);
+    height: 150px;
+    width: 250px;
+    color: purple;
+    font-size: 30px;
+    padding-top: 15px;
+    font-family: 'Luckiest Guy', cursive;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+#homeQuizSelectButton:hover {
+    height: 160px;
+    width: 260px;
 }
