@@ -128,7 +128,8 @@ header{
 }
 
 .answerButton {
-    
+    width: auto;
+    height: auto;
 }
 .answerButtonRmv {
     display: none;

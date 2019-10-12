@@ -159,6 +159,20 @@
 
         // ALL JQUERY QUIZ STUFF
 
+
+        var javaQuestionArray = [1, 2, 3, 4, 5];
+        javaQuestionArray[0] = "What does this do... " + "document.getElementById()";
+        javaQuestionArray[1] = "";
+        javaQuestionArray[2] = "";
+        javaQuestionArray[3] = "";
+        javaQuestionArray[4] = "";
+
+        $("#startBtn").click(function() {
+            $("#questionInsert").empty();
+            $("#questionInsert").append(javaQuestionArray[0]);
+            $("#questionInsert").css({"font-size":"25px"});
+        });
+
         // when start button is pressed...
         $("#startBtn").click(function () {
 
@@ -168,6 +182,9 @@
             // replace startBtn with answer buttons
             $('.answerButtonRmv').removeClass();
         });
+
+
+
 
 
 
