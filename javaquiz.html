@@ -73,8 +73,13 @@
 
     <div id="mainBody-quiz" class="container-fluid">
         <div class="row">
-            <!-- blank space -->
-            <div class="col-4"></div>
+
+
+
+            <!-- Timer -->
+            <div id="timerBox" class="col-4">
+                <p class="timer">Timer: <span class="timer" id="secDisplay">75</span></p>
+            </div>
 
 
 
@@ -128,8 +133,8 @@
 
 
 
-        <!-- Timer -->
-        <div id="secDisplay" class="col-4">75</div>
+        <!-- Blank Space -->
+        <div class="col-4"></div>
 
     </div>
 
@@ -155,11 +160,11 @@
         // ALL JQUERY QUIZ STUFF
 
         // when start button is pressed...
-        $("#startBtn").click(function() {
+        $("#startBtn").click(function () {
 
             // remove startBtn display
-            $('#startBtn').css({"display": "none"});
-            
+            $('#startBtn').css({ "display": "none" });
+
             // replace startBtn with answer buttons
             $('.answerButtonRmv').removeClass();
         });

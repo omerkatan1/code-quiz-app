@@ -4,11 +4,9 @@ var seconds = 75;
 function startTimer() {
     setInterval(function() {
         seconds--;
-        console.log(seconds);
-
 
         seconds = seconds + '';
 
-        secDisplay.appendChild(seconds);
+        document.getElementById("secDisplay").innerHTML = seconds;
     }, 1000)
 }
