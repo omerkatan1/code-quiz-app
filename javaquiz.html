@@ -13,7 +13,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- linking jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- linking navMenu js and css -->
     <link rel="stylesheet" href="Assets/navmenu/navmenu.css">
@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
     <!-- link the javascript for the quiz -->
-    <script src="/Assets/quizAssets/javaquiz.js"></script>
+    <script src="Assets/quizAssets/javaquiz.js"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                 <h1 id="titleText" class="center">Code Quiz</h1>
             </div>
 
-            <!-- blank space -->
+            <!-- Blank Space -->
             <div class="col-2"></div>
         </div>
     </header>
@@ -94,11 +94,17 @@
                     <!-- this is the first two answer buttons will go -->
                     <div class="col-12">
 
+
+                        <!-- this is the start button -->
+                        <button id="startBtn" onclick="startTimer()">Start</button>
+
+
+
                         <!-- first button -->
-                        <button id="A1" class="answerButton"></button>
+                        <button id="A1" class="answerButton answerButtonRmv"></button>
 
                         <!-- second button -->
-                        <button id="A2" class="answerButton"></button>
+                        <button id="A2" class="answerButton answerButtonRmv"></button>
 
                     </div>
                 </div>
@@ -109,10 +115,10 @@
                     <div class="col-12">
 
                         <!-- third button -->
-                        <button id="A3" class="answerButton"></button>
+                        <button id="A3" class="answerButton answerButtonRmv"></button>
 
                         <!-- fourth button -->
-                        <button id="A4" class="answerButton"></button>
+                        <button id="A4" class="answerButton answerButtonRmv"></button>
 
                     </div>
                 </div>
@@ -128,6 +134,7 @@
 
 
     <script>
+        // navMenu animations
         $("#navMenu").hide();
 
         $(document).ready(function () {
@@ -139,6 +146,37 @@
             });
         });
 
+
+
+
+
+
+        // ALL JQUERY QUIZ STUFF
+
+        // when start button is pressed...
+        $("#startBtn").click(function() {
+
+            // remove startBtn display
+            $('#startBtn').css({"display": "none"});
+            
+            // replace startBtn with answer buttons
+            $('.answerButtonRmv').removeClass();
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // this will toggle the change class to animate the hamburger bar
         function animateNav(x) {
             x.classList.toggle("change");
         }

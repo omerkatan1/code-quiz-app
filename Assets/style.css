@@ -125,6 +125,33 @@ header{
     text-align: center;
     background-color: whitesmoke;
 }
+
 .answerButton {
+    
+}
+.answerButtonRmv {
+    display: none;
+}
+
+
+
+#startBtn {
+    border-radius: 30px;
+    background-color: rgb(220, 197, 241);
+    border: 5px solid rgb(118, 82, 204);
+    font-size: 25px;
+    font-family: 'Luckiest Guy';
+    font-weight: lighter;
+    height: 80px;
+    width: 160px;
+    margin-bottom: 10px;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+#startBtn:hover {
+    height: 85px;
+    width: 170px;
+}
+.rmvStart {
     display: none;
 }
