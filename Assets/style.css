@@ -78,7 +78,8 @@ header{
     width: 250px;
     color: purple;
     font-size: 30px;
-    padding-top: 15px;
+    padding-top: 55px;
+    text-align: center;
     font-family: 'Luckiest Guy', cursive;
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s;
@@ -86,4 +87,6 @@ header{
 #homeQuizSelectButton:hover {
     height: 160px;
     width: 260px;
+    padding-top: 60px;
+    cursor: pointer;
 }
