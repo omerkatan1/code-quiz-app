@@ -95,36 +95,39 @@
                 </div>
 
                 <div class="row">
-
-                    <!-- this is the first two answer buttons will go -->
+                    <!-- first answer row -->
                     <div class="col-12">
-
 
                         <!-- this is the start button -->
                         <button id="startBtn" onclick="startTimer()">Start</button>
 
-
-
                         <!-- first button -->
                         <button id="A1" class="answerButton answerButtonRmv"></button>
+                    </div>
+                </div>
 
+                <!-- second answer row -->
+                <div class="row">
+                    <div class="col-12">
                         <!-- second button -->
                         <button id="A2" class="answerButton answerButtonRmv"></button>
-
                     </div>
                 </div>
 
                 <div class="row">
 
-                    <!-- this is the second two answer buttons will go -->
+                    <!-- third answer row -->
                     <div class="col-12">
-
                         <!-- third button -->
                         <button id="A3" class="answerButton answerButtonRmv"></button>
+                    </div>
+                </div>
 
+                <!-- fourth answer row -->
+                <div class="row">
+                    <div class="col-12">
                         <!-- fourth button -->
                         <button id="A4" class="answerButton answerButtonRmv"></button>
-
                     </div>
                 </div>
             </div>
@@ -160,17 +163,19 @@
         // ALL JQUERY QUIZ STUFF
 
 
-        var javaQuestionArray = [1, 2, 3, 4, 5];
-        javaQuestionArray[0] = "What does this do... " + "document.getElementById()";
-        javaQuestionArray[1] = "";
-        javaQuestionArray[2] = "";
-        javaQuestionArray[3] = "";
-        javaQuestionArray[4] = "";
+        var javaQuestionArray = [0, 1, 2, 3, 4];
 
-        $("#startBtn").click(function() {
+
+        $("#startBtn").click(function () {
             $("#questionInsert").empty();
+            javaQuestionArray[0] = "What does this do: " + "document.getElementById();";
             $("#questionInsert").append(javaQuestionArray[0]);
-            $("#questionInsert").css({"font-size":"25px"});
+            $("#questionInsert").css({ "font-size": "25px" });
+
+            $("#A1").append("Calls an element from HTML with an Id");
+            $("#A2").append("Calls an element from HTML with a class");
+            $("#A3").append("Sets an ID for an element in HTML");
+            $("#A4").append("Removes an ID from an element in HTML");
         });
 
         // when start button is pressed...
