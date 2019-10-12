@@ -90,3 +90,41 @@ header{
     padding-top: 60px;
     cursor: pointer;
 }
+
+/* everything to do with the quiz select page */
+#mainBody-quizSelect {
+    background-color: rgb(124, 219, 223);
+    padding-top: 10%;
+    text-align: center;
+}
+#quizLinkBox {
+    border-radius: 30px;
+    border: solid 3px purple;
+    width: 250px;
+    height: 200px;
+    background-color: whitesmoke;
+    padding-top: 30px;
+}
+.quizLink {
+    font-size: 20px;
+    font-family: 'Luckiest Guy';
+}
+
+
+
+
+
+/* all the css for the quiz */
+#mainBody-quiz {
+    padding-top: 8%;
+    background-color: rgb(124, 219, 223);
+}
+#answerBox {
+    border: 5px solid purple;
+    border-radius: 30px;
+    text-align: center;
+    background-color: whitesmoke;
+}
+.answerButton {
+    display: none;
+}

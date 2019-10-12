@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-wedth, initial-scale=1">
+    <title>Code Quiz</title>
+
+    <!-- linking main css file -->
+    <link rel="stylesheet" href="Assets/style.css" type="text/css">
+
+    <!-- Linking css bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- linking jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- linking navMenu js and css -->
+    <link rel="stylesheet" href="Assets/navmenu/navmenu.css">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <!-- link the javascript for the quiz -->
+    <script src="/Assets/quizAssets/javaquiz.js"></script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="container-fluid">
+        <div class="row">
+
+            <!-- box where nav menu button is located -->
+            <div id="navButtonBox" class="col-2">
+
+                <!-- hamburger bar -->
+                <div id="hamBar" class="container" onclick="animateNav(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+
+            </div>
+
+            <!-- where the title is located -->
+            <div id="headerTitleBox" class="col-8">
+                <h1 id="titleText" class="center">Code Quiz</h1>
+            </div>
+
+            <!-- blank space -->
+            <div class="col-2"></div>
+        </div>
+    </header>
+
+
+    <!-- Nav Menu -->
+    <div id="navMenu">
+        <div class="navLinkBox">
+            <a href="Homepage.html" class="navLink">Homepage</a>
+        </div>
+
+        <div class="navLinkBox">
+            <a href="quizselect.html" class="navLink">Quiz Selection</a>
+        </div>
+
+        <div class="navLinkBox">
+            <a class="navLink">Highscores</a>
+        </div>
+    </div>
+
+
+
+    <div id="mainBody-quiz" class="container-fluid">
+        <div class="row">
+            <!-- blank space -->
+            <div class="col-4"></div>
+
+
+
+
+            <!-- this is where the answer box is located -->
+            <div id="answerBox" class="col-4">
+                <div class="row">
+
+                    <!-- this is where the question will be asked -->
+                    <div class="col-12">
+                        <h1 id="questionInsert">Press Start to Begin</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- this is the first two answer buttons will go -->
+                    <div class="col-12">
+
+                        <!-- first button -->
+                        <button id="A1" class="answerButton"></button>
+
+                        <!-- second button -->
+                        <button id="A2" class="answerButton"></button>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <!-- this is the second two answer buttons will go -->
+                    <div class="col-12">
+
+                        <!-- third button -->
+                        <button id="A3" class="answerButton"></button>
+
+                        <!-- fourth button -->
+                        <button id="A4" class="answerButton"></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- blank space -->
+        <div class="col-4"></div>
+    </div>
+
+
+    <script>
+        $("#navMenu").hide();
+
+        $(document).ready(function () {
+            // hides/shows the menu
+            $("#hamBar").click(function () {
+                $("#navMenu").animate({
+                    height: 'toggle',
+                });
+            });
+        });
+
+        function animateNav(x) {
+            x.classList.toggle("change");
+        }
+    </script>
+</body>
+
+</html>
