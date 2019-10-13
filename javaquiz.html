@@ -94,25 +94,28 @@
                 </div>
 
                 <!-- this is the start button -->
-                <button id="startBtn" onclick="startTimer(), insertQuestion()">Start</button>
+                <button id="startBtn" onclick="timer(), insertQuestion()">Start</button>
 
                 <!-- first button -->
-                <button id="A1" class="answerButtonRmv" onclick="checkAnswer()"></button>
+                <button id="A1" class="rmv"></button>
 
                 <!-- second button -->
-                <button id="A2" class="answerButtonRmv" onclick="checkAnswer()"></button>
+                <button id="A2" class="rmv"></button>
 
                 <!-- third button -->
-                <button id="A3" class="answerButtonRmv" onclick="checkAnswer()"></button>
+                <button id="A3" class="rmv"></button>
 
                 <!-- fourth button -->
-                <button id="A4" class="answerButtonRmv" onclick="checkAnswer()"></button>
+                <button id="A4" class="rmv"></button>
 
 
+                <div class="row">
 
-                <!-- next Button -->
-                <button id="nextBtn" class="answerButtonRmv" onclick="insertQuestion()">Next Question</button>
-
+                    <div class="col-12">
+                        <!-- next Button -->
+                        <button id="nextBtn" class="rmv" onclick="insertQuestion()">Next Question</button>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -127,6 +130,10 @@
 
 
     <script>
+        // note from future: just found out you can use jquery in a js file, thats why this stuff is here and not in the js file... 
+
+
+
         // navMenu animations
         $("#navMenu").hide();
 
@@ -139,7 +146,6 @@
             });
         });
 
-
         // when start button is pressed...
         $("#startBtn").click(function() {
 
@@ -149,23 +155,8 @@
             });
 
             // replace startBtn with answer buttons
-            $('.answerButtonRmv').removeClass();
+            $('.rmv').removeClass();
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         // this will toggle the change class to animate the hamburger bar

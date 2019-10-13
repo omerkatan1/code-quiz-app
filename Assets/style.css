@@ -152,6 +152,7 @@ header {
 #A2,
 #A3,
 #A4 {
+    background-color: rgb(175, 175, 175);
     height: 50px;
     width: 400px;
     margin-bottom: 20px;
@@ -183,7 +184,7 @@ header {
     outline: 0;
 }
 
-.answerButtonRmv {
+.rmv {
     display: none;
 }
 
@@ -217,4 +218,25 @@ header {
 
 .rmvStart {
     display: none;
+}
+
+
+/* stuff for javascript */
+
+.correctText {
+    color: rgb(31, 153, 31);
+    font-family: 'Luckiest Guy';
+}
+
+.incorrectText {
+    color: rgb(190, 16, 16);
+    font-family: 'Luckiest Guy';
+}
+
+.correctButton {
+    background-color: green;
+}
+
+.incorrectButton {
+    background-color: red;
 }
