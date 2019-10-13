@@ -2,15 +2,14 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-wedth, initial-scale=1">
+    <meta name="viewport">
     <title>Code Quiz</title>
 
     <!-- linking main css file -->
     <link rel="stylesheet" href="Assets/style.css" type="text/css">
 
     <!-- Linking css bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- linking jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -94,42 +93,27 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <!-- first answer row -->
-                    <div class="col-12">
+                <!-- this is the start button -->
+                <button id="startBtn" onclick="startTimer(), insertQuestion()">Start</button>
 
-                        <!-- this is the start button -->
-                        <button id="startBtn" onclick="startTimer()">Start</button>
+                <!-- first button -->
+                <button id="A1" class="answerButtonRmv" onclick="checkAnswer()"></button>
 
-                        <!-- first button -->
-                        <button id="A1" class="answerButton answerButtonRmv"></button>
-                    </div>
-                </div>
+                <!-- second button -->
+                <button id="A2" class="answerButtonRmv" onclick="checkAnswer()"></button>
 
-                <!-- second answer row -->
-                <div class="row">
-                    <div class="col-12">
-                        <!-- second button -->
-                        <button id="A2" class="answerButton answerButtonRmv"></button>
-                    </div>
-                </div>
+                <!-- third button -->
+                <button id="A3" class="answerButtonRmv" onclick="checkAnswer()"></button>
 
-                <div class="row">
+                <!-- fourth button -->
+                <button id="A4" class="answerButtonRmv" onclick="checkAnswer()"></button>
 
-                    <!-- third answer row -->
-                    <div class="col-12">
-                        <!-- third button -->
-                        <button id="A3" class="answerButton answerButtonRmv"></button>
-                    </div>
-                </div>
 
-                <!-- fourth answer row -->
-                <div class="row">
-                    <div class="col-12">
-                        <!-- fourth button -->
-                        <button id="A4" class="answerButton answerButtonRmv"></button>
-                    </div>
-                </div>
+
+                <!-- next Button -->
+                <button id="nextBtn" class="answerButtonRmv" onclick="insertQuestion()">Next Question</button>
+
+
             </div>
         </div>
 
@@ -146,9 +130,9 @@
         // navMenu animations
         $("#navMenu").hide();
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             // hides/shows the menu
-            $("#hamBar").click(function () {
+            $("#hamBar").click(function() {
                 $("#navMenu").animate({
                     height: 'toggle',
                 });
@@ -156,39 +140,13 @@
         });
 
 
-
-
-
-
-        // ALL JQUERY QUIZ STUFF
-
-
-        var javaQuestionArray = [0, 1, 2, 3, 4];
-
-        var A1 = document.getElementByID("A1");
-        var A2 = document.getElementByID("A2");
-        var A3 = document.getElementByID("A3");
-        var A4 = document.getElementByID("A4");
-
-        $("#startBtn").click(function () {
-            $("#questionInsert").empty();
-            javaQuestionArray[0] = "What does this do: " + "document.getElementById();";
-            $("#questionInsert").append(javaQuestionArray[0]);
-            $("#questionInsert").css({ "font-size": "25px" });
-
-            $("#A1").append("Calls an element from HTML with an Id");
-            $("#A2").append("Calls an element from HTML with a class");
-            $("#A3").append("Sets an ID for an element in HTML");
-            $("#A4").append("Removes an ID from an element in HTML");
-            
-            if(A1 || A2 || A3 || A4 )
-        });
-
         // when start button is pressed...
-        $("#startBtn").click(function () {
+        $("#startBtn").click(function() {
 
             // remove startBtn display
-            $('#startBtn').css({ "display": "none" });
+            $('#startBtn').css({
+                "display": "none"
+            });
 
             // replace startBtn with answer buttons
             $('.answerButtonRmv').removeClass();

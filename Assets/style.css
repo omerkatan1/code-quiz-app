@@ -1,4 +1,5 @@
 /* centers text */
+
 .center {
     margin: 0;
     position: absolute;
@@ -8,9 +9,12 @@
     transform: translate(-50%, -50%);
 }
 
-body, html, header {
+body,
+html,
+header {
     background-color: rgb(124, 219, 223);
 }
+
 #mainBody {
     background-color: rgb(124, 219, 223);
     padding-top: 15%;
@@ -18,7 +22,8 @@ body, html, header {
 
 
 /* everything to do with the header */
-header{
+
+header {
     height: 100px;
 }
 
@@ -45,7 +50,9 @@ header{
     cursor: pointer;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
     border-radius: 10px;
     background-color: black;
     height: 4px;
@@ -53,19 +60,25 @@ header{
     margin: 6px 0;
     transition: 0.4s;
 }
+
+
 /* anamation properties for navbar icon */
+
 .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px); 
+    transform: rotate(-45deg) translate(-9px, 6px);
 }
+
 .change .bar2 {
     -webkit-transform: rotate(-45deg) translate(-2px, -1px);
-    transform: rotate(-45deg) translate(-2px, -1px); 
+    transform: rotate(-45deg) translate(-2px, -1px);
 }
+
 .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -5px);
     transform: rotate(45deg) translate(-8px, -5px);
 }
+
 
 /* everything to do with the body */
 
@@ -84,6 +97,7 @@ header{
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
+
 #homeQuizSelectButton:hover {
     height: 160px;
     width: 260px;
@@ -91,12 +105,15 @@ header{
     cursor: pointer;
 }
 
+
 /* everything to do with the quiz select page */
+
 #mainBody-quizSelect {
     background-color: rgb(124, 219, 223);
     padding-top: 10%;
     text-align: center;
 }
+
 #quizLinkBox {
     border-radius: 30px;
     border: solid 3px purple;
@@ -105,20 +122,20 @@ header{
     background-color: whitesmoke;
     padding-top: 30px;
 }
+
 .quizLink {
     font-size: 20px;
     font-family: 'Luckiest Guy';
 }
 
 
-
-
-
 /* all the css for the quiz */
+
 #mainBody-quiz {
     padding-top: 8%;
     background-color: rgb(124, 219, 223);
 }
+
 #answerBox {
     border: 5px solid purple;
     border-radius: 30px;
@@ -127,10 +144,45 @@ header{
     margin-top: 100px;
 }
 
-.answerButton {
-    width: auto;
-    height: auto;
+#A1 {
+    margin-top: 30px;
 }
+
+#A1,
+#A2,
+#A3,
+#A4 {
+    height: 50px;
+    width: 400px;
+    margin-bottom: 20px;
+    border: 2px solid gray;
+    border-radius: 30px;
+    -moz-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+
+#nextBtn {
+    height: 35px;
+    width: 170px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#A1:active,
+#A2:active,
+#A3:active,
+#A4:active {
+    outline: none;
+    border: 3px solid rgb(83, 83, 83);
+}
+
+#A1:focus,
+#A2:focus,
+#A3:focus,
+#A4:focus {
+    outline: 0;
+}
+
 .answerButtonRmv {
     display: none;
 }
@@ -138,6 +190,7 @@ header{
 #timerBox {
     text-align: center;
 }
+
 .timer {
     font-family: 'Luckiest Guy';
     font-size: 25px;
@@ -156,10 +209,12 @@ header{
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
+
 #startBtn:hover {
     height: 85px;
     width: 170px;
 }
+
 .rmvStart {
     display: none;
 }
