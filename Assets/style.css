@@ -211,11 +211,6 @@ header {
     transition-duration: 0.2s;
 }
 
-#startBtn:hover {
-    height: 85px;
-    width: 170px;
-}
-
 .rmvStart {
     display: none;
 }
@@ -231,12 +226,4 @@ header {
 .incorrectText {
     color: rgb(190, 16, 16);
     font-family: 'Luckiest Guy';
-}
-
-.correctButton {
-    background-color: green;
-}
-
-.incorrectButton {
-    background-color: red;
 }

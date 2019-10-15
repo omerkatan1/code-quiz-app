@@ -28,11 +28,17 @@ function timer() {
     }, 1000);
 }
 
-var answer = '';
+
+
 
 
 //This makes it so when the start button is pressed then it will randomly place down the first question becuase there are no answer buttons to move to the next question
 function insertQuestion(answer) {
+
+    // resets answer
+    var answer = "";
+
+
 
     // randomizes the questions
     var arrayRandomItem = Math.floor(Math.random() * questionArray.length);
@@ -50,6 +56,10 @@ function insertQuestion(answer) {
         console.log(questionArray);
 
         answer = "#A1";
+        not1 = "#A4";
+        not2 = "#A2";
+        not3 = "#A3";
+        checkAnswer(answer);
     }
     if (mixQuestions === q2) {
         $("#A1").text("var");
@@ -61,6 +71,10 @@ function insertQuestion(answer) {
         console.log(questionArray);
 
         answer = "#A3";
+        not1 = "#A1";
+        not2 = "#A2";
+        not3 = "#A4";
+        checkAnswer(answer);
     }
     if (mixQuestions === q3) {
         $("#A1").text("String");
@@ -72,6 +86,10 @@ function insertQuestion(answer) {
         console.log(questionArray);
 
         answer = "#A3";
+        not1 = "#A1";
+        not2 = "#A2";
+        not3 = "#A4";
+        checkAnswer(answer);
     }
     if (mixQuestions === q4) {
         $("#A1").text("Tells the console if something happens");
@@ -83,6 +101,10 @@ function insertQuestion(answer) {
         console.log(questionArray);
 
         answer = "#A4";
+        not1 = "#A1";
+        not2 = "#A2";
+        not3 = "#A3";
+        checkAnswer(answer);
     }
     if (mixQuestions === q5) {
         $("#A1").text("console.log();");
@@ -94,11 +116,12 @@ function insertQuestion(answer) {
         console.log(questionArray);
 
         answer = "#A1";
+        not1 = "#A4";
+        not2 = "#A2";
+        not3 = "#A3";
+        checkAnswer(answer);
     }
 
-    $(answer).click(function() {
-        console.log("pleasework");
-    });
 
 
     //puts the question into html and makes font size smaller
@@ -116,6 +139,62 @@ function insertQuestion(answer) {
     $(incorrectText).text("Incorrect...");
     $(incorrectText).addClass("incorrectText");
 
+    console.log(mixQuestions);
+    console.log(answer);
 
-    return answer;
+
+
+    function checkAnswer(answer, seconds) {
+
+        // if correct answer is clicked...
+        $(answer).one("click", function() {
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+            $(questionDisplay).empty();
+            $(questionDisplay).append(correctText);
+        });
+
+        // if an incorrect answer is clicked...
+        $(not1).click(function() {
+            $(not1).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+            not2 = '';
+            not3 = '';
+            answer = '';
+
+            $(seconds).one(function() {
+                seconds - 15;
+            });
+        });
+        $(not2).click(function() {
+            $(not2).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+            not1 = '';
+            not3 = '';
+            answer = '';
+
+            $(seconds).one(function() {
+                seconds - 15;
+            });
+        });
+
+        $(not3).click(function() {
+            $(not3).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+            not1 = '';
+            not2 = '';
+            answer = '';
+
+            $(seconds).one(function() {
+                seconds - 15;
+            });
+        });
+
+
+
+
+        $("#nextBtn").click(function() {
+            $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
+        });
+        return seconds;
+    }
 }
