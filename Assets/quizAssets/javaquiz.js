@@ -1,3 +1,5 @@
+
+
 var secDisplay = document.querySelector("#secDisplay");
 
 
@@ -16,17 +18,17 @@ var questionArray = [q1, q2, q3, q4, q5];
 var seconds = 15 * questionArray.length;
 
 
+
 // time functions of the quiz
 function timer() {
 
-    setInterval(function() {
+
+    setInterval(function () {
         seconds--;
 
         document.getElementById("secDisplay").innerHTML = seconds;
     }, 1000);
-    return seconds;
 }
-
 
 
 
@@ -34,12 +36,12 @@ function timer() {
 //This makes it so when the start button is pressed then it will randomly place down the first question becuase there are no answer buttons to move to the next question
 function insertQuestion(answer) {
 
+
     // resets answer
     var answer = "";
     var not1 = "";
     var not2 = "";
     var not3 = "";
-
 
 
     // randomizes the questions
@@ -61,7 +63,6 @@ function insertQuestion(answer) {
         not1 = "#A4";
         not2 = "#A2";
         not3 = "#A3";
-        checkAnswer(answer);
     }
     if (mixQuestions === q2) {
         $("#A1").text("var");
@@ -76,7 +77,6 @@ function insertQuestion(answer) {
         not1 = "#A1";
         not2 = "#A2";
         not3 = "#A4";
-        checkAnswer(answer);
     }
     if (mixQuestions === q3) {
         $("#A1").text("String");
@@ -91,7 +91,8 @@ function insertQuestion(answer) {
         not1 = "#A1";
         not2 = "#A2";
         not3 = "#A4";
-        checkAnswer(answer);
+
+        checkAnswer(answer, not1, not2, not3, mixQuestions);
     }
     if (mixQuestions === q4) {
         $("#A1").text("Tells the console if something happens");
@@ -106,7 +107,6 @@ function insertQuestion(answer) {
         not1 = "#A1";
         not2 = "#A2";
         not3 = "#A3";
-        checkAnswer(answer);
     }
     if (mixQuestions === q5) {
         $("#A1").text("console.log();");
@@ -121,10 +121,26 @@ function insertQuestion(answer) {
         not1 = "#A4";
         not2 = "#A2";
         not3 = "#A3";
-        checkAnswer(answer);
     }
 
+    checkAnswer(answer, not1, not2, not3, mixQuestions);
+}
 
+
+
+
+
+
+
+
+
+
+
+
+// this is the code for the answer checker
+function checkAnswer(answer, not1, not2, not3, mixQuestions) {
+
+    
 
     //puts the question into html and makes font size smaller
     var questionDisplay = document.querySelector("#questionInsert");
@@ -146,104 +162,101 @@ function insertQuestion(answer) {
 
 
 
+    
 
-    function checkAnswer(answer) {
-
-        // if an incorrect answer is clicked...
-        $(not1).one("click", function() {
-            $(not1).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
-
-            $(not1).attr('disabled', true);
-            $(not2).attr('disabled', true);
-            $(not3).attr('disabled', true);
-            $(answer).attr('disabled', true);
-
-            $(questionDisplay).empty();
-            $(questionDisplay).append(incorrectText);
-
-            answer = 'wrong';
-            not1 = '';
-            not2 = '';
-            not3 = '';
+    // if an incorrect answer is clicked...
+    $(not1).one("click", function () {
 
 
-        });
-        $(not2).one("click", function() {
-            $(not2).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
+        $(not1).css("background-color", "rgb(190, 16, 16)");
+        $(answer).css("background-color", "rgb(31, 153, 31)");
 
-            $(not1).attr('disabled', true);
-            $(not2).attr('disabled', true);
-            $(not3).attr('disabled', true);
-            $(answer).attr('disabled', true);
+        $(not1).attr('disabled', true);
+        $(not2).attr('disabled', true);
+        $(not3).attr('disabled', true);
+        $(answer).attr('disabled', true);
 
-            $(questionDisplay).empty();
-            $(questionDisplay).append(incorrectText);
+        $(questionDisplay).empty();
+        $(questionDisplay).append(incorrectText);
 
-            answer = 'wrong';
-            not1 = '';
-            not2 = '';
-            not3 = '';
+        answer = '';
+        not1 = '';
+        not2 = '';
+        not3 = '';
 
-        });
+        seconds -= 15;
+    });
+    $(not2).one("click", function () {
 
-        $(not3).one("click", function() {
-            $(not3).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
+        $(not2).css("background-color", "rgb(190, 16, 16)");
+        $(answer).css("background-color", "rgb(31, 153, 31)");
 
-            $(not1).attr('disabled', true);
-            $(not2).attr('disabled', true);
-            $(not3).attr('disabled', true);
-            $(answer).attr('disabled', true);
+        $(not1).attr('disabled', true);
+        $(not2).attr('disabled', true);
+        $(not3).attr('disabled', true);
+        $(answer).attr('disabled', true);
 
+        $(questionDisplay).empty();
+        $(questionDisplay).append(incorrectText);
 
-            $(questionDisplay).empty();
-            $(questionDisplay).append(incorrectText);
+        answer = '';
+        not1 = '';
+        not2 = '';
+        not3 = '';
 
-            answer = 'wrong';
-            not1 = '';
-            not2 = '';
-            not3 = '';
-        });
+        seconds -= 15;
+    });
 
+    $(not3).one("click", function () {
 
+        $(not3).css("background-color", "rgb(190, 16, 16)");
+        $(answer).css("background-color", "rgb(31, 153, 31)");
 
-        if (answer === "wrong") {
-            seconds -= 15;
-        }
-
-
-
-        // if correct answer is clicked...
-        $(answer).one("click", function() {
-            $(answer).css("background-color", "rgb(31, 153, 31)");
-
-            $(questionDisplay).empty();
-            $(questionDisplay).append(correctText);
-
-            $(not1).attr('disabled', true);
-            $(not2).attr('disabled', true);
-            $(not3).attr('disabled', true);
-            $(answer).attr('disabled', true);
-
-            answer = '';
-            not1 = '';
-            not2 = '';
-            not3 = '';
-        });
+        $(not1).attr('disabled', true);
+        $(not2).attr('disabled', true);
+        $(not3).attr('disabled', true);
+        $(answer).attr('disabled', true);
 
 
-        $("#nextBtn").click(function() {
-            $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
+        $(questionDisplay).empty();
+        $(questionDisplay).append(incorrectText);
 
-            $(not1).attr('disabled', false);
-            $(not2).attr('disabled', false);
-            $(not3).attr('disabled', false);
-            $(answer).attr('disabled', false);
-        });
-    }
+        answer = '';
+        not1 = '';
+        not2 = '';
+        not3 = '';
+
+        seconds -= 15;
+    });
 
 
-    $(not1).one("click", function() {});
+
+    // if correct answer is clicked...
+    $(answer).one("click", function () {
+
+        $(answer).css("background-color", "rgb(31, 153, 31)");
+
+        $(questionDisplay).empty();
+        $(questionDisplay).append(correctText);
+
+        $(not1).attr('disabled', true);
+        $(not2).attr('disabled', true);
+        $(not3).attr('disabled', true);
+        $(answer).attr('disabled', true);
+
+        answer = '';
+        not1 = '';
+        not2 = '';
+        not3 = '';
+    });
+
+
+    $("#nextBtn").click(function () {
+        $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
+
+        $(not1).attr('disabled', false);
+        $(not2).attr('disabled', false);
+        $(not3).attr('disabled', false);
+        $(answer).attr('disabled', false);
+    });
 }
