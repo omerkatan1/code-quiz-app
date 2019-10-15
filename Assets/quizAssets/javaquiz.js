@@ -22,10 +22,9 @@ function timer() {
     setInterval(function() {
         seconds--;
 
-        seconds = seconds + '';
-
         document.getElementById("secDisplay").innerHTML = seconds;
     }, 1000);
+    return seconds;
 }
 
 
@@ -150,8 +149,6 @@ function insertQuestion(answer) {
 
     function checkAnswer(answer) {
 
-
-
         // if an incorrect answer is clicked...
         $(not1).one("click", function() {
             $(not1).css("background-color", "rgb(190, 16, 16)");
@@ -165,10 +162,12 @@ function insertQuestion(answer) {
             $(questionDisplay).empty();
             $(questionDisplay).append(incorrectText);
 
-            answer = '';
+            answer = 'wrong';
             not1 = '';
             not2 = '';
             not3 = '';
+
+
         });
         $(not2).one("click", function() {
             $(not2).css("background-color", "rgb(190, 16, 16)");
@@ -182,10 +181,11 @@ function insertQuestion(answer) {
             $(questionDisplay).empty();
             $(questionDisplay).append(incorrectText);
 
-            answer = '';
+            answer = 'wrong';
             not1 = '';
             not2 = '';
             not3 = '';
+
         });
 
         $(not3).one("click", function() {
@@ -201,11 +201,17 @@ function insertQuestion(answer) {
             $(questionDisplay).empty();
             $(questionDisplay).append(incorrectText);
 
-            answer = '';
+            answer = 'wrong';
             not1 = '';
             not2 = '';
             not3 = '';
         });
+
+
+
+        if (answer === "wrong") {
+            seconds -= 15;
+        }
 
 
 
@@ -228,8 +234,6 @@ function insertQuestion(answer) {
         });
 
 
-
-
         $("#nextBtn").click(function() {
             $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
 
@@ -237,7 +241,9 @@ function insertQuestion(answer) {
             $(not2).attr('disabled', false);
             $(not3).attr('disabled', false);
             $(answer).attr('disabled', false);
-
         });
     }
+
+
+    $(not1).one("click", function() {});
 }
