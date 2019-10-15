@@ -14,7 +14,6 @@ var questionArray = [q1, q2, q3, q4, q5];
 
 
 
-
 var seconds = 15 * questionArray.length;
 
 
@@ -132,13 +131,13 @@ function insertQuestion(answer) {
 
 
 
-
+var wrong = false;
 
 
 
 
 // this is the code for the answer checker
-function checkAnswer(answer, not1, not2, not3, mixQuestions) {
+function checkAnswer(answer, not1, not2, not3, mixQuestions, minusTime) {
 
     
 
@@ -167,7 +166,6 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions) {
     // if an incorrect answer is clicked...
     $(not1).one("click", function () {
 
-
         $(not1).css("background-color", "rgb(190, 16, 16)");
         $(answer).css("background-color", "rgb(31, 153, 31)");
 
@@ -184,7 +182,7 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions) {
         not2 = '';
         not3 = '';
 
-        seconds -= 15;
+        wrong = true;
     });
     $(not2).one("click", function () {
 
@@ -204,7 +202,7 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions) {
         not2 = '';
         not3 = '';
 
-        seconds -= 15;
+        wrong = true;
     });
 
     $(not3).one("click", function () {
@@ -226,7 +224,7 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions) {
         not2 = '';
         not3 = '';
 
-        seconds -= 15;
+        wrong = true;
     });
 
 
@@ -248,8 +246,17 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions) {
         not1 = '';
         not2 = '';
         not3 = '';
+
+        wrong = false;
     });
 
+    console.log(wrong);
+    console.log(minusTime);
+
+    if(wrong === true) {
+        seconds -= 15;
+        wrong = false;
+    }
 
     $("#nextBtn").click(function () {
         $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
