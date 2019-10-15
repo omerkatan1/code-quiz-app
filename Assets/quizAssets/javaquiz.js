@@ -13,12 +13,12 @@ var questionArray = [q1, q2, q3, q4, q5];
 
 
 
-
-
 var seconds = 15 * questionArray.length;
+
 
 // time functions of the quiz
 function timer() {
+
     setInterval(function() {
         seconds--;
 
@@ -37,6 +37,9 @@ function insertQuestion(answer) {
 
     // resets answer
     var answer = "";
+    var not1 = "";
+    var not2 = "";
+    var not3 = "";
 
 
 
@@ -144,49 +147,84 @@ function insertQuestion(answer) {
 
 
 
-    function checkAnswer(answer, seconds) {
+
+    function checkAnswer(answer) {
+
+
+
+        // if an incorrect answer is clicked...
+        $(not1).one("click", function() {
+            $(not1).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+
+            $(not1).attr('disabled', true);
+            $(not2).attr('disabled', true);
+            $(not3).attr('disabled', true);
+            $(answer).attr('disabled', true);
+
+            $(questionDisplay).empty();
+            $(questionDisplay).append(incorrectText);
+
+            answer = '';
+            not1 = '';
+            not2 = '';
+            not3 = '';
+        });
+        $(not2).one("click", function() {
+            $(not2).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+
+            $(not1).attr('disabled', true);
+            $(not2).attr('disabled', true);
+            $(not3).attr('disabled', true);
+            $(answer).attr('disabled', true);
+
+            $(questionDisplay).empty();
+            $(questionDisplay).append(incorrectText);
+
+            answer = '';
+            not1 = '';
+            not2 = '';
+            not3 = '';
+        });
+
+        $(not3).one("click", function() {
+            $(not3).css("background-color", "rgb(190, 16, 16)");
+            $(answer).css("background-color", "rgb(31, 153, 31)");
+
+            $(not1).attr('disabled', true);
+            $(not2).attr('disabled', true);
+            $(not3).attr('disabled', true);
+            $(answer).attr('disabled', true);
+
+
+            $(questionDisplay).empty();
+            $(questionDisplay).append(incorrectText);
+
+            answer = '';
+            not1 = '';
+            not2 = '';
+            not3 = '';
+        });
+
+
 
         // if correct answer is clicked...
         $(answer).one("click", function() {
             $(answer).css("background-color", "rgb(31, 153, 31)");
+
             $(questionDisplay).empty();
             $(questionDisplay).append(correctText);
-        });
 
-        // if an incorrect answer is clicked...
-        $(not1).click(function() {
-            $(not1).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
-            not2 = '';
-            not3 = '';
+            $(not1).attr('disabled', true);
+            $(not2).attr('disabled', true);
+            $(not3).attr('disabled', true);
+            $(answer).attr('disabled', true);
+
             answer = '';
-
-            $(seconds).one(function() {
-                seconds - 15;
-            });
-        });
-        $(not2).click(function() {
-            $(not2).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
-            not1 = '';
-            not3 = '';
-            answer = '';
-
-            $(seconds).one(function() {
-                seconds - 15;
-            });
-        });
-
-        $(not3).click(function() {
-            $(not3).css("background-color", "rgb(190, 16, 16)");
-            $(answer).css("background-color", "rgb(31, 153, 31)");
             not1 = '';
             not2 = '';
-            answer = '';
-
-            $(seconds).one(function() {
-                seconds - 15;
-            });
+            not3 = '';
         });
 
 
@@ -194,7 +232,12 @@ function insertQuestion(answer) {
 
         $("#nextBtn").click(function() {
             $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");
+
+            $(not1).attr('disabled', false);
+            $(not2).attr('disabled', false);
+            $(not3).attr('disabled', false);
+            $(answer).attr('disabled', false);
+
         });
-        return seconds;
     }
 }
