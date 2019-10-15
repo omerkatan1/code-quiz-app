@@ -26,6 +26,10 @@ function timer() {
         seconds--;
 
         document.getElementById("secDisplay").innerHTML = seconds;
+
+        if(seconds <= 0) {
+            console.log("test");
+        }
     }, 1000);
 }
 
@@ -35,6 +39,9 @@ function timer() {
 //This makes it so when the start button is pressed then it will randomly place down the first question becuase there are no answer buttons to move to the next question
 function insertQuestion(answer) {
 
+    if(questionArray.length === 0) {
+        console.log("finished");
+    }
 
     // resets answer
     var answer = "";
@@ -56,7 +63,6 @@ function insertQuestion(answer) {
         $("#A4").text("Removes an Id from an element in HTML");
 
         questionArray.splice(arrayRandomItem, 1);
-        console.log(questionArray);
 
         answer = "#A1";
         not1 = "#A4";
@@ -70,7 +76,6 @@ function insertQuestion(answer) {
         $("#A4").text("boolean");
 
         questionArray.splice(arrayRandomItem, 1);
-        console.log(questionArray);
 
         answer = "#A3";
         not1 = "#A1";
@@ -84,7 +89,6 @@ function insertQuestion(answer) {
         $("#A4").text("null");
 
         questionArray.splice(arrayRandomItem, 1);
-        console.log(questionArray);
 
         answer = "#A3";
         not1 = "#A1";
@@ -100,7 +104,6 @@ function insertQuestion(answer) {
         $("#A4").text("Creates a popup on the page of the content that is in the brackets");
 
         questionArray.splice(arrayRandomItem, 1);
-        console.log(questionArray);
 
         answer = "#A4";
         not1 = "#A1";
@@ -114,7 +117,6 @@ function insertQuestion(answer) {
         $("#A4").text("display();");
 
         questionArray.splice(arrayRandomItem, 1);
-        console.log(questionArray);
 
         answer = "#A1";
         not1 = "#A4";
@@ -204,7 +206,6 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions, minusTime) {
 
         wrong = true;
     });
-
     $(not3).one("click", function () {
 
         $(not3).css("background-color", "rgb(190, 16, 16)");
@@ -251,12 +252,15 @@ function checkAnswer(answer, not1, not2, not3, mixQuestions, minusTime) {
     });
 
     console.log(wrong);
-    console.log(minusTime);
 
+
+    // this checks if question is wrong and subtracts seconds by 15 if it is...
     if(wrong === true) {
         seconds -= 15;
         wrong = false;
     }
+
+
 
     $("#nextBtn").click(function () {
         $("#A1, #A2, #A3, #A4").css("background-color", "rgb(175, 175, 175)");

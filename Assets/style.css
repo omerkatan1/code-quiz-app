@@ -38,10 +38,6 @@ header {
     font-family: 'Luckiest Guy', cursive;
 }
 
-#navButtonBox {
-    margin-left: 30px;
-}
-
 #hamBar {
     position: absolute;
     left: 30px;
